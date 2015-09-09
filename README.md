@@ -1,45 +1,31 @@
-# Google Fonts Files
+## Google Fonts Fork with a Bash Script for Extracting .ttf Files into One Folder
 
-This project contains the binary font files served by Google Fonts: http://www.google.com/fonts
+If you want to use Google webfonts with a desktop program like Adobe Photoshop, then you generally have to download them one by one, extract the .ttf font file and copy it over to your computer's font directory. 
 
-The top level directories indicate the license of all files found within them.
-Subdirectories are named according to the family name of the fonts within. 
+You can download all of the Google webfonts at once, but these are not organized in a way that makes copying them over to your font directory easy. I wrote a simple bash script as a solution to this problem. The script grabs all the .ttf font files in the Google Fonts repo and copies them over to the folder of your choice. 
 
-Each family subdirectory contains the  `.ttf` font files served by Google Fonts, plus a `METADATA.json` file with metadata for the family, and a `DESCRIPTION.en_us.html` with a description of the family in US English.
+### Bash Script Instructions
 
-Also [/designers](designers) contains a list of the Google+ pages for the fonts' designers.
+First download or clone this repo. Then open your terminal and go to the directory of the newly downloaded or cloned repo and just run the following in your terminal:
 
-## Download All Google Fonts
+```
+bash fonts.sh
+```
 
-You can download all Google Fonts in a simple ZIP snapshot (over 250Mb) from <https://github.com/google/fonts/archive/master.zip>
+You can also run the bash script from anywhere as long as you call its full file path like so
 
-#### Sync With Git
+```
+bash path/to/fonts/fonts.sh
+```
 
-You can also sync the collection with git, so that you can update by only fetching what has changed.
-To learn how to use git, Github provides [illustrated guides](https://guides.github.com) and a [youtube channel](https://www.youtube.com/user/GitHubGuides), and a [learning game that takes just 15 minutes](https://try.github.io). 
-Free, open source git applications are available for [Windows](https://msysgit.github.io) and [Mac OS X](http://gitx.laullon.com).
+You will then be prompted to name a unique directory where the .ttf files will be extracted to. 
 
-## Licensing
+After the files have been extracted, you can just move them to your fonts directory which on my computer would go something like this:
 
-It is important to always read the license for every font that you use.
-Each font family directory contains the appropriate license file for the fonts in that directory. 
-The fonts files themselves also contain licensing and authorship metadata.
+```
+mv mynewdir/*.ttf /Library/Fonts/
+```
 
-Most of the fonts in the collection use the SIL Open Font License, v1.1.
-Some fonts use the Apache 2 license. 
-The Ubuntu fonts use the Ubuntu Font License v1.0. 
+You can also alter the fonts.sh script to cp the *.ttf files directly into your font directory if you prefer.
 
-The SIL Open Font License has an option for copyright holders to include a Reserved Font Name requirement, and this is option is used with some of the fonts. 
-If you modify those fonts, please take care of this important detail.
-
-## Source Files
-
-Source files for each family are often available from the designer, or from https://github.com/googlefonts 
-
-These fonts are usually the result of collaborative projects, where you are invited to discuss issues with the designers and even contribute to their on-going development.
-
-When customising or remixing fonts, please do contact the designers to understand what they might need in order to include your improvements.
-
-Most of all: Enjoy the fonts!
-
-– The Google Fonts team, 2015-06-18
+Original readme file for this repo found here: https://github.com/google/fonts
